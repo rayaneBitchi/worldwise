@@ -32,7 +32,7 @@ function reducer(state, action) {
         cities: [...state.cities, action.payload],
         currentCity: action.payload,
       };
-    case "cities/deleted":
+    case "city/deleted":
       return {
         ...state,
         isLoading: false,
@@ -58,7 +58,7 @@ const initialState = {
 };
 
 function CitiesProvider({ children }) {
-  const [{ cities, currentCity, isLoading }, dispatch] = useReducer(
+  const [{ cities, currentCity, isLoading, error }, dispatch] = useReducer(
     reducer,
     initialState
   );
@@ -80,7 +80,7 @@ function CitiesProvider({ children }) {
   }, []);
 
   async function getCity(id) {
-    if (currentCity.id === id) return;
+    if (currentCity.id === Number(id)) return;
 
     dispatch({ type: "loading" });
     try {
@@ -95,6 +95,8 @@ function CitiesProvider({ children }) {
   async function createCity(newCity) {
     dispatch({ type: "loading" });
     try {
+      if (cities.find((city) => city.cityName === newCity.cityName))
+        throw new Error("City already exists");
       const res = await fetch(`${BASE_URL}/cities`, {
         method: "POST",
         headers: {
@@ -103,7 +105,7 @@ function CitiesProvider({ children }) {
         body: JSON.stringify(newCity),
       });
       const data = await res.json();
-      dispatch({ type: "cities/created", payload: data });
+      dispatch({ type: "city/created", payload: data });
     } catch (error) {
       dispatch({ type: "rejected", payload: "Error creating city" });
     }
@@ -131,6 +133,7 @@ function CitiesProvider({ children }) {
         getCity,
         createCity,
         deleteCity,
+        error,
       }}>
       {children}
     </CitiesContext.Provider>
