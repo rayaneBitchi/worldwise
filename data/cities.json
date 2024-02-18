@@ -25,15 +25,15 @@
       }
     },
     {
-      "id": "3e0d",
-      "cityName": "Marsabit",
-      "country": "Kenya",
-      "emoji": "🇰🇪",
-      "date": "2017-10-24T06:26:04.000Z",
-      "notes": "Went to visite my dad and his wife",
+      "id": "c086",
+      "cityName": "Agudo",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-02-18T08:21:31.348Z",
+      "notes": "Nice place to live",
       "position": {
-        "lat": "1.5818302639606454",
-        "lng": "38.3203125"
+        "lat": "39.04478604850143",
+        "lng": "-4.812011718750001"
       }
     }
   ]
