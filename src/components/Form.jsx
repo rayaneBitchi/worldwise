@@ -61,6 +61,7 @@ function Form() {
           !data.localityInfo ||
           !data.localityInfo.administrative
         ) {
+          setIsLoadingGeocoding(false);
           throw new Error(
             "That doesn't look like a valid city, click somewhere else on the map. 🗺️"
           );

@@ -12,10 +12,14 @@ export default function CountryList() {
     return <Spinner />;
   }
 
-  const countries = cities.reduce((arr, city) => {
-    if (!arr.map((el) => el.country).includes(city.country))
-      return [...arr, { contry: city.country, emoji: city.emoji }];
-    else return arr;
+  const countries = cities.reduce((accumulator, currentCity) => {
+    // const newArr = [...accumulator].map(el => el.country)
+    if (!accumulator.map((city) => city.country).includes(currentCity.country))
+      return [
+        ...accumulator,
+        { country: currentCity.country, emoji: currentCity.emoji },
+      ];
+    else return accumulator;
   }, []);
 
   if (!countries.length) {
@@ -26,8 +30,8 @@ export default function CountryList() {
 
   return (
     <ul className={styles.countryList}>
-      {countries.map((country) => (
-        <CountryItem key={country.contry} country={country} />
+      {countries.map((country, index) => (
+        <CountryItem key={index} country={country} />
       ))}
     </ul>
   );
