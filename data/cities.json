@@ -1,0 +1,40 @@
+{
+  "cities": [
+    {
+      "id": "214c",
+      "cityName": "Ottawa",
+      "country": "Canada",
+      "emoji": "🇨🇦",
+      "date": "2024-02-18T06:50:51.822Z",
+      "notes": "Canada capital",
+      "position": {
+        "lat": "45.367584368849805",
+        "lng": "-75.58593750000001"
+      }
+    },
+    {
+      "id": "18be",
+      "cityName": "Didievi",
+      "country": "Cote d'Ivoire",
+      "emoji": "🇨🇮",
+      "date": "2024-02-18T07:01:34.701Z",
+      "notes": "My home town",
+      "position": {
+        "lat": "7.18810087117902",
+        "lng": "-4.921875000000001"
+      }
+    },
+    {
+      "id": "3e0d",
+      "cityName": "Marsabit",
+      "country": "Kenya",
+      "emoji": "🇰🇪",
+      "date": "2017-10-24T06:26:04.000Z",
+      "notes": "Went to visite my dad and his wife",
+      "position": {
+        "lat": "1.5818302639606454",
+        "lng": "38.3203125"
+      }
+    }
+  ]
+}
