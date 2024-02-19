@@ -14,7 +14,7 @@ import styles from "./Form.module.css";
 import Message from "./Message";
 import Spinner from "./Spinner";
 
-export function convertToEmoji(countryCode) {
+function convertToEmoji(countryCode) {
   const codePoints = countryCode
     .toUpperCase()
     .split("")
@@ -69,7 +69,6 @@ function Form() {
 
         setCityName(data.city || data.locality || "Unknown city");
         setCountry(data.countryName);
-        console.log(country);
         setEmoji(convertToEmoji(data.countryCode));
       } catch (error) {
         setGeocodingError(error.message);
